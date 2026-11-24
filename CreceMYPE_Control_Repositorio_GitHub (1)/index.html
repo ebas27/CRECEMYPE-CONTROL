@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102b42"><meta name="description" content="CreceMYPE Control: gestión de inventarios, ventas, vencimientos y prevención de pérdidas para pequeños negocios.">
+  <title>CreceMYPE Control | Tu negocio, bajo control</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark"><span>↗</span></div><div><b>Crece<span>MYPE</span></b><small>CONTROL · SISTEMA DE GESTIÓN</small></div></div>
+      <div class="side-label">ESPACIO DE TRABAJO</div>
+      <nav id="nav" class="nav">
+        <button data-view="sales" class="nav-item active"><span class="nav-icon">▤</span> Caja y ventas</button>
+        <button data-view="inventory" class="nav-item"><span class="nav-icon">▦</span> Inventario</button>
+        <button data-view="dashboard" class="nav-item"><span class="nav-icon">◫</span> Resumen <span class="nav-badge" id="nav-risk-count"></span></button>
+        <button data-view="entries" class="nav-item"><span class="nav-icon">⊞</span> Entradas y ajustes</button>
+        <button data-view="alerts" class="nav-item"><span class="nav-icon">⚑</span> Alertas y riesgo</button>
+        <button data-view="promos" class="nav-item"><span class="nav-icon">% </span> Promociones</button>
+        <button data-view="reports" class="nav-item"><span class="nav-icon">▥</span> Reportes</button>
+        <button data-view="impact" class="nav-item"><span class="nav-icon">◉</span> Impacto y ahorro</button>
+        <button data-view="imports" class="nav-item"><span class="nav-icon">⇅</span> Importar y respaldar</button>
+      </nav>
+      <div class="side-label side-bottom-label">ADMINISTRACIÓN</div>
+      <nav class="nav"><button data-view="settings" class="nav-item"><span class="nav-icon">⚙</span> Configuración</button></nav>
+      <div class="side-card"><div class="side-card-icon">✦</div><b>Tu negocio en marcha</b><p>Registra ventas, recibe mercadería y revisa tus alertas. Cada movimiento actualiza el stock.</p><span id="storage-indicator">● Guardado local</span></div>
+      <div class="side-footer">Versión 1.1 · Aplicación operativa</div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar">
+        <button class="mobile-toggle icon-btn" id="toggle-menu" aria-label="Abrir menú">☰</button>
+        <div class="crumb"><span class="crumb-logo">↗</span><span id="header-business">Bodega San José</span><span class="crumb-slash">/</span><strong id="header-current">Caja y ventas</strong></div>
+        <div class="top-actions"><span class="live-pill"><i></i> <span>Disponible sin conexión</span></span><button class="btn btn-quiet btn-sm" data-action="backup">↓ Respaldo</button><div class="profile" title="Negocio actual" id="profile-initials">SJ</div></div>
+      </header>
+      <main id="content" class="content" tabindex="-1"></main>
+      <footer class="bottom-info">CreceMYPE Control · Tus datos se guardan en este navegador. Las alertas y proyecciones no sustituyen un conteo físico ni garantizan mayores ventas.</footer>
+    </div>
+  </div>
+  <div id="modal-root"></div><div id="toast-root" aria-live="polite"></div>
+  <input id="csv-file-input" class="hidden" type="file" accept=".csv,text/csv,.txt">
+  <input id="json-file-input" class="hidden" type="file" accept=".json,application/json">
+  <script src="app.js"></script>
+</body></html>
